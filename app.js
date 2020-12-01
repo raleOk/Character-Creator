@@ -23,26 +23,16 @@ const Model = (() => {
     }
 
     const addHero = (id, name, level, weapon, hClass) => {
-        let hero;
         if (hClass.value === 'mage') { 
-            hero = new Mage (id, name.value, Number(level.value), weapon.value);
-            data.mages.push(hero);
+            data.mages.push(new Mage (id, name.value, Number(level.value), weapon.value));
         } else {
-            hero = new Warrior (id, name.value, Number(level.value), weapon.value);
-            data.warriors.push(hero);
+            data.warriors.push(new Warrior (id, name.value, Number(level.value), weapon.value));
         }     
     }
 
     const compareLvls = () => {
-        const bestHeroArr = [];
-        if (data.warriors.length > 0) {
-            bestHeroArr.push(data.warriors.reduce((max, hero) => max.level > hero.level ? max : hero));
-        }
-        if (data.mages.length > 0) {
-            bestHeroArr.push(data.mages.reduce((max, hero) => max.level > hero.level ? max : hero));
-        }
-        
-        return bestHeroArr.reduce((max, hero) => max.level > hero.level ? max : hero);
+        const allHeroArray = data.warriors.concat(data.mages);
+        return allHeroArray.reduce((max, hero) => max.level > hero.level ? max : hero);
     }
 
     const uniqueID = () => {
