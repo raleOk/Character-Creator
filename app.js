@@ -23,7 +23,7 @@ const Model = (() => {
     }
 
     const addHero = (id, name, level, weapon, hClass) => {
-         let hero;
+        let hero;
         if (hClass.value === 'mage') { 
             hero = new Mage (id, name.value, Number(level.value), weapon.value);
             data.mages.push(hero);
@@ -35,11 +35,9 @@ const Model = (() => {
 
     const compareLvls = () => {
         const bestHeroArr = [];
-
         if (data.warriors.length > 0) {
             bestHeroArr.push(data.warriors.reduce((max, hero) => max.level > hero.level ? max : hero));
         }
-
         if (data.mages.length > 0) {
             bestHeroArr.push(data.mages.reduce((max, hero) => max.level > hero.level ? max : hero));
         }
@@ -69,7 +67,6 @@ const Model = (() => {
 const View = (() => {
 
     const displayWarrior = (name, level, weapon, list, id) => {
-
         const warriorElement = document.createElement('p');
         warriorElement.setAttribute('id', id);
         warriorElement.innerHTML = `Name:${name} <span>Level:${level}</span> Weapon:${weapon}`;     
@@ -77,7 +74,6 @@ const View = (() => {
     } 
 
     const displayMage = (name, level, spell, list, id) => {
-
         const mageElement = document.createElement('p');
         mageElement.setAttribute('id', id);
         mageElement.innerHTML = `Name:${name} <span>Level:${level}</span> Spell:${spell}`;
