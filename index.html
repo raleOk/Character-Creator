@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset = "UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<form>
-
-    <div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <div>
         <label for="heroName">Enter Name:</label>
-        <input type ="text" placeholder="Character Name" id="heroName" name="name" required> 
-    
-    </div>
-    <div>
+        <input
+          type="text"
+          placeholder="Character Name"
+          id="heroName"
+          name="name"
+          required
+        />
+      </div>
+      <div>
         <label for="heroLevel">Enter Level:</label>
-        <input type ="number" placeholder="Character Level" id="heroLevel" name="level" required>
-    </div>
-    
-    <div>
-    <label for="heroClass">Choose your class:</label>
-    <select name="heroClass" id="hero-class" required>
-        <option value="warrior">Warrior</option>
-        <option value="mage">Mage</option>
-    </select>
-    </div>  
-    
-    <div>
-    <label for="weapon">Weapon/Spell:</label>
-    <input type="text" placeholder="Weapon/Spell" id="heroWeapon" name="weapon" required>
-    </div>  
-    
-    <button type="button" id="charCreate">Create Character</button>
-    
-</form>
+        <input
+          type="number"
+          placeholder="Character Level"
+          id="heroLevel"
+          name="level"
+          required
+        />
+      </div>
 
-<div>
-    <div id='warriorList'></div>
-    <div id="mageList"></div>
-    <button type="button" id="fightBtn" style="display: none">Fight</button>
-</div>
+      <div>
+        <label for="heroClass">Choose your class:</label>
+        <select name="heroClass" id="hero-class" required>
+          <option value="warrior">Warrior</option>
+          <option value="mage">Mage</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="weapon">Weapon/Spell:</label>
+        <input
+          type="text"
+          placeholder="Weapon/Spell"
+          id="heroWeapon"
+          name="weapon"
+          required
+        />
+      </div>
+
+      <button type="button" id="charCreate">Create Character</button>
+    </form>
+
+    <div>
+      <div id="warriorList" class="deleteBtn"></div>
+      <div id="mageList" class="deleteBtn"></div>
+      <button type="button" id="fightBtn" style="display: none">Fight</button>
+    </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
